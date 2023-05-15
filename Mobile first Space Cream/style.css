@@ -1,0 +1,240 @@
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-heading:'Staatliches', sans-serif;
+  --ff-main: 'Palanquin', sans-serif;
+  --ff-body: 'Staatliches', sans-serif;
+  
+  --hue: 218;
+  --bg-primary: hsl(var(--hue), 17%, 62%);
+  --bg-secondary: hsl(275, 18%, 79%);
+  --fc-primary: hsl(var(--hue), 0%, 100%);
+  --fc-body: hsl(var(--hue), 84%, 12%);
+
+  font-size: 62.5%;
+  --fs-body: 1.6rem;
+  --fs-heading: 4rem;
+  --fs-main: 2rem; 
+}
+
+body {
+  font-family: var(--ff-body);
+
+  font-size: var(--fs-body);
+
+  background-color: #EFF1FF;
+
+  height: 1995px;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 38.4rem;
+}
+
+@media (min-width:700px) {
+  :root {
+  --ff-body: 'Roboto', sans-serif;
+
+  --fs-heading: 4.8rem;
+  --fs-body: 2.4rem;
+  }
+
+  .page {
+    max-width: 128rem;
+    padding: 0;
+
+    position: absolute;
+    display: flex;
+    gap: 3.2rem;
+  }
+
+  body {
+    width: 1280px;
+    height: 720px;
+  }
+  
+  main {
+    width: 90.3rem;
+
+    height: 72rem;
+
+    padding: 6.4rem 9.8rem 8.1rem 5rem ;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+
+  section {
+    width: 37.7rem;
+    height: 72rem;
+  }
+
+  a {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    color:#4A4E69;
+
+  }
+
+  .card {
+  padding: 3.2rem;
+  }
+}
+
+@media (min-width: 930px) {
+
+  .main {
+    grid-template-areas: "A B A " 
+    "C D C"
+  }
+
+  main .card#img1 {
+    grid-area: A;
+  }
+
+  main .card#img2 {
+    grid-area: B;
+  }
+
+  main .card#img3 {
+    grid-area: C;
+  }
+
+  main .card#img4 {
+    grid-area: D;
+  }
+}
+
+header {
+ font-family: var(--ff-heading);
+
+ background-color: var(--bg-primary);
+
+ color: var(--fc-primary);
+
+ height: 720px;
+
+ text-align: center;
+
+ margin-bottom: 1.2rem;
+
+ width: 100%;
+
+ animation: topdown 700ms;
+
+}
+
+header img {
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+header h1 {
+  font-weight: 400;
+  font-size: var(--fs-heading);
+  line-height: 3.4rem;
+  vertical-align: Top;
+
+  background-color: var(--bg-secondary);
+
+  margin-bottom: 3.2rem;
+
+  padding: 2rem;
+
+  width: 100%;
+  height: 70px;
+}
+
+header p {
+
+  font-family: var(--ff-body);
+
+  color: var(--fc-primary);
+
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px; 
+
+  padding: 0 3.3rem;
+
+  margin-bottom: 12.5rem;
+
+  width: 27.5;
+
+  text-align: center;
+
+}
+
+.main img {
+  width: 100%;
+  height: auto;
+}
+
+
+.card {
+  position: relative;
+
+  animation: downtop 700ms 350ms backwards;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.7rem;
+  right: 1.6rem;
+  color: #4A4E69;
+
+  border-radius: 2rem;
+  background-color: #FEEAFA;
+  font-size: var(--fs-main);
+  font-weight: 400;
+  line-height: 3.4rem;
+  text-transform: uppercase;
+  
+  padding: 0 2.3rem;
+  height: 3.4rem;
+
+}
+
+.card img {
+  object-fit: cover;
+
+  transition: all 200ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
